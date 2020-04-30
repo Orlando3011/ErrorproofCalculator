@@ -10,7 +10,13 @@ public class FactorialCalculator {
     }
 
     private long calculateMichalWasik() {
-        long result = argument;
+        long counter = 1;
+        long result = 1;
+        while(counter <= argument) {
+            result = result * counter;
+            counter = counter + 1;
+        }
+        System.out.println("Michał Wąsik, silnia wynik: " + result);
         return result;
     }
 

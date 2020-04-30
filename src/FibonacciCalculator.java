@@ -10,20 +10,35 @@ public class FibonacciCalculator {
     }
 
     private long calculateMichalWasik() {
-        long result = element;
-        return element;
+        long el1 = 1;
+        long el2 = 1;
+        long counter = 2;
+        long result = 0;
+        long tmp;
+        if(element == 1) result = el1;
+        if(element == 2) result = el2;
+        else {
+            while(counter <= element) {
+                tmp = el2;
+                el2 = el2 + el1;
+                el1 = tmp;
+                counter = counter + 1;
+            }
+            result = el2;
+        }
+        return result;
     }
 
     private long calculateMichalPatyna() {
         //tu idzie kod
         long result = element;
-        return element;
+        return result;
     }
 
     private long calculateDominikSzafraniec() {
         //tu idzie kod
         long result = element;
-        return element;
+        return result;
     }
 
     public void compareResults() {
