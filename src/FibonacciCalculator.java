@@ -10,13 +10,13 @@ public class FibonacciCalculator {
     }
 
     private long calculateMichalWasik() {
-        long el1 = 1;
+        long el1 = 0;
         long el2 = 1;
         long counter = 2;
-        long result = 0;
+        long result;
         long tmp;
         if(element == 1) result = el1;
-        if(element == 2) result = el2;
+        else if(element == 2) result = el2;
         else {
             while(counter <= element) {
                 tmp = el2;
@@ -26,6 +26,7 @@ public class FibonacciCalculator {
             }
             result = el2;
         }
+        System.out.println("Michał Wąsik, Fibonacci wynik: " + result);
         return result;
     }
 
