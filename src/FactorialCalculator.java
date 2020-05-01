@@ -26,15 +26,27 @@ public class FactorialCalculator {
         return result;
     }
 
-    private long calculateDominikSzafraniec() {
-        long result = argument;
+    private long calculateDominikSzafraniec(long element) {
+        long result = 0;
+        try{
+            if (element<0)
+                result =0;
+            else
+                if(element==0)
+                    result = 1;
+                else
+                    result = element*calculateDominikSzafraniec(element-1);
+        }catch(Exception e){
+            System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
+            e.printStackTrace();
+        }
         return result;
     }
 
     public void compareResults() {
         long resultMW = calculateMichalWasik();
         long resultMP = calculateMichalPatyna();
-        long resultDS = calculateDominikSzafraniec();
+        long resultDS = calculateDominikSzafraniec(argument);
 
         if(resultDS == resultMP && resultDS == resultMW) {
             System.out.println("Wszystkie wyniki są takie same i wynoszą: " + resultDS);

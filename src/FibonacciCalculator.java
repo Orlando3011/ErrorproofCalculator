@@ -36,16 +36,27 @@ public class FibonacciCalculator {
         return result;
     }
 
-    private long calculateDominikSzafraniec() {
-        //tu idzie kod
-        long result = element;
+    private long calculateDominikSzafraniec(long element) {
+        long result = 0;
+        try{
+        if(element<=0)
+            result = 0;
+        else
+            if(element==1)
+                result = 1;
+            else
+                result = (calculateDominikSzafraniec(element -2)+calculateDominikSzafraniec(element-1));
+        }catch(Exception e){
+            System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
+            e.printStackTrace();
+        }
         return result;
     }
 
     public void compareResults() {
         long resultMW = calculateMichalWasik();
         long resultMP = calculateMichalPatyna();
-        long resultDS = calculateDominikSzafraniec();
+        long resultDS = calculateDominikSzafraniec(this.element);
 
         if(resultDS == resultMP && resultDS == resultMW) {
             System.out.println("Wszystkie wyniki są takie same i wynoszą: " + resultDS);
