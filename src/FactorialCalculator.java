@@ -34,7 +34,7 @@ public class FactorialCalculator {
         return result;
     }
 
-    private long calculateDominikSzafraniec(long element) {
+    private long calculateDominikSzafraniecRec(long element) {
         long result = 0;
         try {
             if (element < 0)
@@ -42,11 +42,16 @@ public class FactorialCalculator {
             else if (element == 0)
                 result = 1;
             else
-                result = element * calculateDominikSzafraniec(element - 1);
+                result = element * calculateDominikSzafraniecRec(element - 1);
         } catch (Exception e) {
             System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
             e.printStackTrace();
         }
+        return result;
+    }
+
+    private long calculateDominikSzafraniec(long element) {
+        long result = calculateDominikSzafraniecRec(element);
         System.out.println("Dominik Szafraniec, silnia wynik: " + result);
         return result;
     }

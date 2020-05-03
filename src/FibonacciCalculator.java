@@ -45,7 +45,7 @@ public class FibonacciCalculator {
         return result;
     }
 
-    private long calculateDominikSzafraniec(long element) {
+    private long calculateDominikSzafraniecRec(long element) {
         long result = 0;
         try {
             if (element <= 0)
@@ -53,11 +53,16 @@ public class FibonacciCalculator {
             else if (element == 1)
                 result = 1;
             else
-                result = (calculateDominikSzafraniec(element - 2) + calculateDominikSzafraniec(element - 1));
+                result = (calculateDominikSzafraniecRec(element - 2) + calculateDominikSzafraniecRec(element - 1));
         } catch (Exception e) {
             System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
             e.printStackTrace();
         }
+        return result;
+    }
+
+    private long calculateDominikSzafraniec(long element) {
+        long result = calculateDominikSzafraniecRec(element);
         System.out.println("Dominik Szafraniec, Fibonacci wynik: " + result);
         return result;
     }
