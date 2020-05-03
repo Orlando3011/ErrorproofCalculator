@@ -47,6 +47,7 @@ public class FactorialCalculator {
             System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
             e.printStackTrace();
         }
+        System.out.println("Dominik Szafraniec, silnia wynik: " + result);
         return result;
     }
 

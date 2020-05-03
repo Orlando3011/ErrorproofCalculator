@@ -58,6 +58,7 @@ public class FibonacciCalculator {
             System.out.println(" \n @@@@@@@@ Stack is full!!! @@@@@@@@@ \n");
             e.printStackTrace();
         }
+        System.out.println("Dominik Szafraniec, Fibonacci wynik: " + result);
         return result;
     }
 
