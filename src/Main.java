@@ -3,7 +3,7 @@ public class Main {
         FactorialCalculator factorialCalculator = new FactorialCalculator();
         FibonacciCalculator fibonacciCalculator = new FibonacciCalculator();
 
-        long silnia = 10;
+        long silnia = 5;
         long fibonacci = 10;
 
         System.out.println("Silnia z liczby: " + silnia);
